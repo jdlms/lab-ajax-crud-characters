@@ -1,6 +1,6 @@
 class APIHandler {
   constructor(baseUrl) {
-    this.api = axios.create({ baseUrl: this.BASE_URL });
+    this.api = axios.create({ baseUrl });
   }
 
   async getFullList() {
@@ -15,8 +15,8 @@ class APIHandler {
   }
 
   async createOneRegister(newCharacter) {
-    const newCharacter = { ...characterData };
-    const { data } = await this.api.post("/characters", newCharacter);
+    const character = { ...characterData };
+    const { data } = await this.api.post("/characters", character);
     return { data };
   }
 
